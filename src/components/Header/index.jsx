@@ -1,4 +1,4 @@
-import reactShekil from '../assets/react.svg'
+import reactShekil from '../../assets/react.svg'
 
 function Header({ ad, title, onClick, isMain = false, withReact = false }) {
     return <div>

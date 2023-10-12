@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.modalContainer {
+    width: 500px;
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: black;
+    box-shadow: 0 0 10px white;
+    position: relative;
+}
+
+
+.modal {
+    background-color: #242424;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    padding: 10px 0;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.closeModal {
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+.closeModal:hover {
+    color: red;
+}
