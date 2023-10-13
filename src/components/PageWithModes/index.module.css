@@ -1,0 +1,19 @@
+.text {
+    width: 600px;
+}
+
+* {
+    margin: 0;
+}
+
+.container {
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.darkMode,
+.darkMode * {
+    color: white !important;
+    background-color: black !important;
+}
