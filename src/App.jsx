@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './components/Header'
 import Counter from './components/Counter'
 import Input from './components/Input'
+import Users from './components/Users'
 function App() {
+  const [show, setShow] = useState(false)
   return (
     <>
-      <Input />
+      {/* <Input /> */}
+      <button onClick={() => setShow(!show)}>show hide componenet</button>
+      {
+        show && <Users />
+      }
       {/* <Counter />
       <Header
         title="aodzvsdijcxvgsvgvh"
