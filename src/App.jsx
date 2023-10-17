@@ -2,14 +2,12 @@ import React from 'react'
 import TimeOut from './components/TimeOut'
 import "./App.css"
 import "./index.css"
+import Students from './components/Students'
 function App() {
   // const [show, setShow] = useState(false)
   return (
     <>
-      <TimeOut initial="4" />
-      <TimeOut initial="30" />
-      <TimeOut initial="30" />
-      <TimeOut initial="30" />
+      <Students />
       {/* <Input /> */}
       {/* <button onClick={() => setShow(!show)}>show hide componenet</button>
       {
