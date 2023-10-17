@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
-import Header from './components/Header'
-import Counter from './components/Counter'
-import Input from './components/Input'
-import Users from './components/Users'
+import React from 'react'
+import TimeOut from './components/TimeOut'
+import "./App.css"
+import "./index.css"
 function App() {
-  const [show, setShow] = useState(false)
+  // const [show, setShow] = useState(false)
   return (
     <>
+      <TimeOut initial="4" />
+      <TimeOut initial="30" />
+      <TimeOut initial="30" />
+      <TimeOut initial="30" />
       {/* <Input /> */}
-      <button onClick={() => setShow(!show)}>show hide componenet</button>
+      {/* <button onClick={() => setShow(!show)}>show hide componenet</button>
       {
         show && <Users />
-      }
+      } */}
       {/* <Counter />
       <Header
         title="aodzvsdijcxvgsvgvh"
