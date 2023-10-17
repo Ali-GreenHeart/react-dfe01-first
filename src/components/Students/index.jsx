@@ -12,7 +12,13 @@ export default function Students() {
     }, [])
 
     const onEdit = (_id) => {
-
+        const body = {
+            name: prompt('yeni adi daxl edin: ', students.find(({ id }) => id === _id).name)
+        }
+        axios.put(_url + '/' + _id, body)
+            .then(() => {
+                axios.get(_url).then(({ data }) => setStudents(data))
+            })
     }
     const onDelete = (_id) => {
         axios.delete(`${_url}/${_id}`).then(() => {
