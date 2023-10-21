@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import App from './App'
-import PageWithModes from './components/PageWithModes'
 // import "./index.css"
 
 const reactRootElement = ReactDOM.createRoot(document.getElementById('root'))
@@ -9,7 +9,9 @@ const reactRootElement = ReactDOM.createRoot(document.getElementById('root'))
 
 reactRootElement.render(
     // <PageWithModes>
-    <App />
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
     // </PageWithModes >
 )
 // render -> code to UI
