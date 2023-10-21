@@ -1,17 +1,27 @@
-import reactShekil from '../../assets/react.svg'
+import "./index.css"
+import { NavLink } from "react-router-dom"
 
-function Header({ ad, title, onClick, isMain = false, withReact = false }) {
-    return <div>
-        <h1>Header compo</h1>
-        {/* <h1
-            style={{ color: isMain ? 'green' : 'black' }}
-        >salam {ad}</h1>
-        <p>{title}</p> */}
-        {/* <button onClick={onClick} >click me</button> */}
-        {
-            withReact && <img src={reactShekil} alt="" />
-        }
-        <hr />
+function Navigation({ to, title }) {
+    return (
+        <NavLink
+            to={to}
+            style={({ isActive }) => ({ color: isActive ? 'red' : 'default' })}
+        >
+            {title}
+        </NavLink>
+    )
+}
+
+function Header({ }) {
+    return <div className="container_header">
+        <img className="logo" src="/eziz-xan.jpg" alt="" />
+        <div>
+            <Navigation to="/" title="Home" />
+            <Navigation to="/about" title="About" />
+            <Navigation to="/students" title="Students" />
+            <Navigation to="/counter" title="Counter" />
+            <Navigation to="/users" title="Users" />
+        </div>
     </div>
 }
 export default Header;

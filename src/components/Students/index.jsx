@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import PageContainer from "../PageContainer"
 
 // endpoint
 const _url = 'https://652e826d0b8d8ddac0b17fc6.mockapi.io/students'
@@ -39,7 +40,7 @@ export default function Students() {
             })
     }
     return (
-        <>
+        <PageContainer>
             <form onSubmit={onSubmit}>
                 <input value={value} onChange={({ target }) => setValue(target.value)} type="text" />
                 <button>add student</button>
@@ -51,6 +52,6 @@ export default function Students() {
                     <button onClick={() => onDelete(id)}>❌</button>
                 </div>))
             }
-        </>
+        </PageContainer>
     )
 }

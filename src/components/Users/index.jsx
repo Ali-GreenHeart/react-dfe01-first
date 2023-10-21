@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Loading from "../Loading"
+import PageContainer from "../PageContainer"
 
 const _URL = 'https://jsonplaceholder.typicode.com/users'
 
@@ -33,12 +34,12 @@ export default function Users() {
     }
 
     return (
-        <>
+        <PageContainer>
             {
                 users.map(({ id, name, username }) => {
                     return <UserItem key={id} name={name} username={username} />
                 })
             }
-        </>
+        </PageContainer>
     )
 }

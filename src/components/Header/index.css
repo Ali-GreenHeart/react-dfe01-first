@@ -1,0 +1,16 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.logo:hover {
+    box-shadow: 0 0 lavender 50px;
+    cursor: grab;
+}
+
+.container_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
