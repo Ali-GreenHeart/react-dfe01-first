@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Loading from "../Loading"
@@ -5,13 +6,13 @@ import PageContainer from "../PageContainer"
 
 const _URL = 'https://jsonplaceholder.typicode.com/users'
 
-const UserItem = ({ name, username }) => {
+const UserItem = ({ id, name, username }) => {
     return (
-        <>
+        <Link to={`/users/${id}`}>
             <h1>{name}</h1>
             <p>{username}</p>
             <hr />
-        </>
+        </Link>
     )
 }
 // atomar
@@ -37,7 +38,7 @@ export default function Users() {
         <PageContainer>
             {
                 users.map(({ id, name, username }) => {
-                    return <UserItem key={id} name={name} username={username} />
+                    return <UserItem key={id} id={id} name={name} username={username} />
                 })
             }
         </PageContainer>
