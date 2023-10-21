@@ -4,6 +4,7 @@ import Counter from "../components/Counter"
 import Users from "../components/Users"
 import About from "../pages/About"
 import Home from "../pages/Home"
+import UserDetails from "../pages/UserDetails"
 
 
 const WebRouting = () => {
@@ -15,6 +16,7 @@ const WebRouting = () => {
                 <Route path="/students" element={<Students />} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path="/users" element={<Users />} />
+                <Route path="/users/:id" element={<UserDetails />} />
             </Routes >
         </>
     )
