@@ -4,20 +4,22 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import DataContextProvider from './context-api/DataContext'
 import UserEmailContextProvider from './context-api/UserEmailContext'
-// import "./index.css"
+import ColorModeContextProvider from './context-api/ColorModeContext'
 
 const reactRootElement = ReactDOM.createRoot(document.getElementById('root'))
 
 
 reactRootElement.render(
     // <PageWithModes>
-    <DataContextProvider>
-        <UserEmailContextProvider>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </UserEmailContextProvider>
-    </DataContextProvider>
+    <ColorModeContextProvider>
+        <DataContextProvider>
+            <UserEmailContextProvider>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </UserEmailContextProvider>
+        </DataContextProvider>
+    </ColorModeContextProvider>
     // </PageWithModes >
 )
 // render -> code to UI

@@ -3,6 +3,7 @@ import "./index.css"
 import { NavLink } from "react-router-dom"
 import { DataContext } from "../../context-api/DataContext"
 import { UserEmailContext } from "../../context-api/UserEmailContext"
+import { ColorModeContext } from "../../context-api/ColorModeContext"
 
 function Navigation({ to, title }) {
     return (
@@ -19,6 +20,7 @@ function Header({ }) {
 
     const { name, surname } = useContext(DataContext)
     const email = useContext(UserEmailContext)
+    const [handleClick, emoji] = useContext(ColorModeContext)
 
     return (
         <div className="container_header">
@@ -26,6 +28,9 @@ function Header({ }) {
             <div>
                 <h3>{name} {surname}</h3>
                 <h5>{name}'s email is {email}  </h5>
+            </div>
+            <div>
+                <button onClick={handleClick} className="many-mode-button ">{emoji}</button>
             </div>
             <div>
                 <Navigation to="/" title="Home" />
