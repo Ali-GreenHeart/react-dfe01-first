@@ -2,6 +2,7 @@ import { useContext } from "react"
 import "./index.css"
 import { NavLink } from "react-router-dom"
 import { DataContext } from "../../context-api/DataContext"
+import { UserEmailContext } from "../../context-api/UserEmailContext"
 
 function Navigation({ to, title }) {
     return (
@@ -17,12 +18,14 @@ function Navigation({ to, title }) {
 function Header({ }) {
 
     const { name, surname } = useContext(DataContext)
+    const email = useContext(UserEmailContext)
 
     return (
         <div className="container_header">
             <img className="logo" src="/eziz-xan.jpg" alt="" />
             <div>
                 <h3>{name} {surname}</h3>
+                <h5>{name}'s email is {email}  </h5>
             </div>
             <div>
                 <Navigation to="/" title="Home" />

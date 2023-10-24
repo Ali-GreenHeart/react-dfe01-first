@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 export const DataContext = createContext({})
 
-const data = { name: 'alion', surname: 'js' }
+const data = { name: 'eziz', surname: 'xan' }
 /* children:  componentin icerisine yazdigim elementler */
 const DataContextProvider = ({ children }) => {
     return (
