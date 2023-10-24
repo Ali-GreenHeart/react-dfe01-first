@@ -1,5 +1,7 @@
+import { useContext } from "react"
 import "./index.css"
 import { NavLink } from "react-router-dom"
+import { DataContext } from "../../context-api/DataContext"
 
 function Navigation({ to, title }) {
     return (
@@ -13,15 +15,23 @@ function Navigation({ to, title }) {
 }
 
 function Header({ }) {
-    return <div className="container_header">
-        <img className="logo" src="/eziz-xan.jpg" alt="" />
-        <div>
-            <Navigation to="/" title="Home" />
-            <Navigation to="/about" title="About" />
-            <Navigation to="/students" title="Students" />
-            <Navigation to="/counter" title="Counter" />
-            <Navigation to="/users" title="Users" />
+
+    const { name, surname } = useContext(DataContext)
+
+    return (
+        <div className="container_header">
+            <img className="logo" src="/eziz-xan.jpg" alt="" />
+            <div>
+                <h3>{name} {surname}</h3>
+            </div>
+            <div>
+                <Navigation to="/" title="Home" />
+                <Navigation to="/about" title="About" />
+                <Navigation to="/students" title="Students" />
+                <Navigation to="/counter" title="Counter" />
+                <Navigation to="/users" title="Users" />
+            </div>
         </div>
-    </div>
+    )
 }
 export default Header;
