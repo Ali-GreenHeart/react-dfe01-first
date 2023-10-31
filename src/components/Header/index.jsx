@@ -38,6 +38,7 @@ function Header({ }) {
                 <Navigation to="/students" title="Students" />
                 <Navigation to="/counter" title="Counter" />
                 <Navigation to="/users" title="Users" />
+                <Navigation to="/users-with-reducer" title="UserWR" />
             </div>
         </div>
     )
