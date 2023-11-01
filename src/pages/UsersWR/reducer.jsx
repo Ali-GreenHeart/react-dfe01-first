@@ -26,8 +26,8 @@ export const reducer = (store, action) => {
             return newUsers;
         case USERS_ACTIONS.edit_user:
             const _newUsers = store.map((user) => {
-                if (user.id === action.payload) {
-                    return { ...user, username: prompt('enter new username', user.username) }
+                if (user.id === action.payload.id) {
+                    return { ...user, username: action.payload.value }
                 }
                 return user;
             })

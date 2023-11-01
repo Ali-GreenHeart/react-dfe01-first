@@ -1,24 +1,25 @@
 import { useState } from 'react';
 import style from './index.module.css'
-const Modal = () => {
+const Modal = ({ onSubmitCallback }) => {
     const [showModal, setShowModal] = useState(false)
+    const [value, setValue] = useState('')
     return (
         <>
-            <button onClick={() => setShowModal(true)}>show modal</button>
-
+            <button onClick={() => {
+                setShowModal(true)
+            }} >edit the user</button>
             {
-                showModal && <div className={style.modal} >
-                    <div className={style.modalContainer}>
-                        <div className={style.closeModal} onClick={() => setShowModal(false)}>&times;</div>
-                        <h2>title</h2>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta aliquam atque libero voluptatum quibusdam magni voluptate blanditiis minima! Officiis similique aspernatur deleniti ratione fugit alias aperiam velit quaerat explicabo optio?
-                        </p>
-                        <hr />
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat vero recusandae enim quis maxime quasi accusantium reprehenderit optio odit sed? Blanditiis, suscipit aliquam cumque id numquam natus nihil quos provident.
-                        </p>
-                    </div>
+                showModal && <div className={style.modal}>
+                    <input
+                        value={value}
+                        onChange={(e) => {
+                            setValue(e.target.value)
+                        }}
+                        type="text" style={{ fontSize: 32 }} placeholder='enter your name' />
+                    <button onClick={() => {
+                        onSubmitCallback(value)
+                        setShowModal(false)
+                    }}  >submit and close</button>
                 </div>
             }
         </>
