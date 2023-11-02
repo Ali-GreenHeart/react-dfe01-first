@@ -4,6 +4,7 @@ import { Suspense } from "react"
 import Loading from "../components/Loading"
 
 const Counter = lazy(() => import("../components/Counter"))
+const CounterPage = lazy(() => import("../pages/Counter"))
 const Students = lazy(() => import("../components/Students"))
 const Users = lazy(() => import("../components/Users"))
 const About = lazy(() => import("../pages/About"))
@@ -23,6 +24,7 @@ const WebRouting = () => {
                 <Route path="/students" element={<Students />} />
                 <Route path="/users-with-reducer" element={<UsersWR />} />
                 <Route path="/counter" element={<Counter />} />
+                <Route path="/counter-redux" element={<CounterPage />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/users/:id" element={<UserDetails />} />
             </Routes >
