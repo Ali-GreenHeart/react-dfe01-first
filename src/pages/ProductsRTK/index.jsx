@@ -26,6 +26,7 @@ const ProductsRTK = ({ }) => {
                         <h1 key={p.id}>
                             {p.title}
                             <button onClick={() => dispatch(productSlice.actions.remove_product(p.id))}>❌</button>
+                            <button onClick={() => dispatch(productSlice.actions.edit_product(p.id))}>🖋</button>
                         </h1>
                     )
                 })

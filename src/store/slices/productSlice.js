@@ -6,8 +6,8 @@ const productSlice = createSlice({
         value: []
     },
     reducers: {
-        get_products: (store, act) => {
-            store.value = act.payload
+        get_products: (store, { payload }) => {
+            store.value = payload
         },
         add_product: (store, act) => {
             store.value = store.value.concat(act.payload)
@@ -18,7 +18,15 @@ const productSlice = createSlice({
         remove_product: (store, act) => {
             store.value = store.value.filter((p) => p.id !== act.payload)
         },
-        edit_product: (store) => { },
+        edit_product: (store, act) => {
+            store.value = store.value.map((p) => {
+                if (p.id === act.payload) {
+                    return { ...p, title: prompt('', p.title) ?? p.title }
+                }
+                return p
+            })
+
+        },
     }
 })
 
