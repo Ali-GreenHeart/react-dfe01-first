@@ -1,21 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
+import ColorModeContextProvider from './context-api/ColorModeContext'
 import DataContextProvider from './context-api/DataContext'
 import UserEmailContextProvider from './context-api/UserEmailContext'
-import ColorModeContextProvider from './context-api/ColorModeContext'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import rootReducer from './redux/rootReducer'
+import store from './store'
 
 const reactRootElement = ReactDOM.createRoot(document.getElementById('root'))
 
-const _store = createStore(rootReducer)
+// const _store = createStore(rootReducer)
 
 reactRootElement.render(
     // <PageWithModes>
-    <Provider store={_store}>
+    <Provider store={store}>
         <ColorModeContextProvider>
             <DataContextProvider>
                 <UserEmailContextProvider>

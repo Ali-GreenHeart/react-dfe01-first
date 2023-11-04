@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router"
 import { lazy } from "react"
 import { Suspense } from "react"
 import Loading from "../components/Loading"
+import CounterRTK from "../pages/CounterRTK"
 
 const Counter = lazy(() => import("../components/Counter"))
 const CounterPage = lazy(() => import("../pages/Counter"))
@@ -27,6 +28,7 @@ const WebRouting = () => {
                 <Route path="/users-with-redux" element={<UserWRedux />} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path="/counter-redux" element={<CounterPage />} />
+                <Route path="/counter-rtk" element={<CounterRTK />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/users/:id" element={<UserDetails />} />
             </Routes >
