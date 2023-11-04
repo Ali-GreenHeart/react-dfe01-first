@@ -5,6 +5,7 @@ import Loading from "../components/Loading"
 import CounterRTK from "../pages/CounterRTK"
 
 const Counter = lazy(() => import("../components/Counter"))
+const ProductsRTK = lazy(() => import("../pages/ProductsRTK"))
 const CounterPage = lazy(() => import("../pages/Counter"))
 const Students = lazy(() => import("../components/Students"))
 const Users = lazy(() => import("../components/Users"))
@@ -24,6 +25,7 @@ const WebRouting = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/students" element={<Students />} />
+                <Route path="/products" element={<ProductsRTK />} />
                 <Route path="/users-with-reducer" element={<UsersWR />} />
                 <Route path="/users-with-redux" element={<UserWRedux />} />
                 <Route path="/counter" element={<Counter />} />
