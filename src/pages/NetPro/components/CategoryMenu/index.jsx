@@ -22,7 +22,7 @@ const categories = [
 
 export default function CategoryMenu() {
     return (
-        <Paper sx={{ width: 320, maxWidth: '100%', margin: 2 }}>
+        <Paper sx={{ margin: 2 }}>
             <MenuList
                 subheader={
                     <Paper
