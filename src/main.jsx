@@ -7,6 +7,8 @@ import ColorModeContextProvider from './context-api/ColorModeContext'
 import DataContextProvider from './context-api/DataContext'
 import UserEmailContextProvider from './context-api/UserEmailContext'
 import store from './store'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import theme from './theme'
 
 const reactRootElement = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -15,15 +17,18 @@ const reactRootElement = ReactDOM.createRoot(document.getElementById('root'))
 reactRootElement.render(
     // <PageWithModes>
     <Provider store={store}>
-        <ColorModeContextProvider>
-            <DataContextProvider>
-                <UserEmailContextProvider>
-                    <BrowserRouter>
-                        <App />
-                    </BrowserRouter>
-                </UserEmailContextProvider>
-            </DataContextProvider>
-        </ColorModeContextProvider>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <ColorModeContextProvider>
+                <DataContextProvider>
+                    <UserEmailContextProvider>
+                        <BrowserRouter>
+                            <App />
+                        </BrowserRouter>
+                    </UserEmailContextProvider>
+                </DataContextProvider>
+            </ColorModeContextProvider>
+        </ThemeProvider>
     </Provider>
     // </PageWithModes >
 )

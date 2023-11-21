@@ -15,6 +15,7 @@ const Services = lazy(() => import("../pages/Services"))
 const UserDetails = lazy(() => import("../pages/UserDetails"))
 const UsersWR = lazy(() => import("../pages/UsersWR"))
 const UserWRedux = lazy(() => import("../pages/UsersWRedux"))
+const MuiPage = lazy(() => import("../pages/MuiPage"))
 
 // code splitting   4 eded ->  2.5mb
 const WebRouting = () => {
@@ -28,6 +29,7 @@ const WebRouting = () => {
                 <Route path="/products" element={<ProductsRTK />} />
                 <Route path="/users-with-reducer" element={<UsersWR />} />
                 <Route path="/users-with-redux" element={<UserWRedux />} />
+                <Route path="/muipage" element={<MuiPage />} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path="/counter-redux" element={<CounterPage />} />
                 <Route path="/counter-rtk" element={<CounterRTK />} />
