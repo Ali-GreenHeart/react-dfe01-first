@@ -13,7 +13,6 @@ const SelectedCategoryInfo = ({ title, body, categoryItems = [] }) => {
                             <Typography variant="h6"> {title}</Typography>
                             <Typography>{body}</Typography>
                         </Box>
-                        // <CategoryItem />
                     )
                 })
             }
