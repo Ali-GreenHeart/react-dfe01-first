@@ -3,6 +3,7 @@ import { lazy } from "react"
 import { Suspense } from "react"
 import Loading from "../components/Loading"
 import CounterRTK from "../pages/CounterRTK"
+import NetPro from "../pages/NetPro"
 
 const Counter = lazy(() => import("../components/Counter"))
 const ProductsRTK = lazy(() => import("../pages/ProductsRTK"))
@@ -30,6 +31,7 @@ const WebRouting = () => {
                 <Route path="/users-with-reducer" element={<UsersWR />} />
                 <Route path="/users-with-redux" element={<UserWRedux />} />
                 <Route path="/muipage" element={<MuiPage />} />
+                <Route path="/netpro" element={<NetPro />} />
                 <Route path="/counter" element={<Counter />} />
                 <Route path="/counter-redux" element={<CounterPage />} />
                 <Route path="/counter-rtk" element={<CounterRTK />} />
