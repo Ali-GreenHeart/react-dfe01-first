@@ -19,6 +19,11 @@ const theme = createTheme({
                     borderRadius: '40px'
                 }
             }
+        },
+        MuiMenuItem: {
+            defaultProps: {
+                disableRipple: true
+            }
         }
     }
 })
