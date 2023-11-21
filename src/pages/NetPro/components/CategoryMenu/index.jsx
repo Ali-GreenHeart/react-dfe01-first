@@ -4,25 +4,12 @@ import Paper from '@mui/material/Paper';
 import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Typography from '@mui/material/Typography';
-import ContentCut from '@mui/icons-material/ContentCut';
-import ContentCopy from '@mui/icons-material/ContentCopy';
-import ContentPaste from '@mui/icons-material/ContentPaste';
-import Cloud from '@mui/icons-material/Cloud';
+import { Typography } from '@mui/material';
 
-const categories = [
-    "Uninterruptible Power Supplies (UPS)",
-    "DC Power Systems",
-    "Power Distribution",
-    "Industrial AC and DC Systems",
-    "Static Transfer Switches",
-    "Power Control and Monitoring",
-]
 
-export default function CategoryMenu() {
+export default function CategoryMenu({ categories, setCatId, catId }) {
     return (
-        <Paper sx={{ margin: 2 }}>
+        <Paper>
             <MenuList
                 subheader={
                     <Paper
@@ -42,8 +29,17 @@ export default function CategoryMenu() {
                 {
                     categories.map((txt, i) => {
                         return (
-                            <MenuItem key={i} sx={{ gap: 1.4, flexDirection: 'column', alignItems: 'flex-start' }}>
-                                <ListItemText>{txt}</ListItemText>
+                            <MenuItem
+                                onClick={() => setCatId(i)}
+                                key={i}
+                                sx={{
+                                    gap: 1.4, flexDirection: 'column', alignItems: 'flex-start'
+                                }}
+                            >
+                                <Typography sx={{
+
+                                    textWrap: 'wrap'
+                                }} color={catId === i ? 'blue' : 'unset'} fontWeight={catId === i ? 600 : 'unset'}>{txt}</Typography>
                                 {
                                     i === categories.length - 1
                                         ?
@@ -56,6 +52,6 @@ export default function CategoryMenu() {
                 }
 
             </MenuList>
-        </Paper>
+        </Paper >
     );
 }
